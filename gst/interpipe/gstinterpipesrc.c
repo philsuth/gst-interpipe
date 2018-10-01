@@ -212,6 +212,9 @@ gst_inter_pipe_src_init (GstInterPipeSrc * src)
   src->enable_sync = TRUE;
   src->accept_events = TRUE;
   src->accept_eos_event = TRUE;
+
+  gst_base_src_set_format (GST_BASE_SRC (src), GST_FORMAT_TIME);
+  gst_base_src_set_live (GST_BASE_SRC (src), TRUE);
 }
 
 static void
